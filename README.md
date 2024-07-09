@@ -2,12 +2,11 @@
 
 调用讯飞星火对话大模型实现自己的chatgpt。
 
-### 技术栈
+## 技术栈
 
 - 前端框架：[uni-app](https://uniapp.dcloud.net.cn/) (Vue3 + TS + Setup)
 - 状态管理：[pinia](https://pinia.vuejs.org/zh/)
 - 组件库：[uni-ui](https://uniapp.dcloud.net.cn/component/uniui/uni-ui.html)
-
 
 ## 运行程序
 
@@ -36,7 +35,7 @@ npm run dev:h5
 
 3. 微信开发者工具导入 `/dist/dev/mp-weixin` 目录
 
-### 工程结构解析
+## 工程结构解析
 
 ```
 ├── .husky                     # Git Hooks
@@ -46,22 +45,15 @@ npm run dev:h5
 │   ├── components             # 全局组件
 │   ├── composables            # 组合式函数
 │   ├── pages                  # 主包页面
-│       ├── index               # 首页
-│       ├── category            # 分类页
-│       ├── cart                # 购物车
-│       ├── my                  # 我的
-│       └── login               # 登录页
-│   ├── services               # 所有请求
+│       ├── index              # 首页
+│   ├── api               	   # 所有请求
 │   ├── static                 # 存放应用引用的本地静态资源的目录
-│       ├── images              # 普通图片
-│       └── tabs                # tabBar 图片
-│   ├── pinia                 # 全局 pinia store
-│       ├── modules             # 模块
-│       └── index.ts            # store 入口
-│   ├── styles                 # 全局样式
-│       └── fonts.scss          # 字体图标
+│       ├── images             # 普通图片
+│   ├── pinia                  # 全局 pinia store
+│       ├── modules            # 模块
+│       └── index.ts           # store 入口
 │   ├── types                  # 类型声明文件
-│       └── component.d.ts      # 全局组件类型声明
+│       └── component.d.ts     # 全局组件类型声明
 │   ├── utils                  # 全局方法
 │   ├── App.vue                # 入口页面
 │   ├── main.ts                # Vue初始化入口文件
@@ -77,3 +69,9 @@ npm run dev:h5
 ├── tsconfig.json              # typescript 配置
 └── vite.config.ts             # vite 配置
 ```
+
+## 微信扫码浏览体验版
+
+##### 注意：因为发布上线需要各种资质证明所以暂无发布，浏览体验版是需要开启本地调试才可以
+
+### ![oiYwi7QxJx3nPa9SunEZxKhJaXvg](F:\admin\Download\oiYwi7QxJx3nPa9SunEZxKhJaXvg.jpg)
