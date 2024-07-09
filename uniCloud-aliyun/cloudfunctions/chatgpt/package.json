@@ -1,0 +1,19 @@
+{
+  "name": "chatgpt",
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "crypto-js": "^4.2.0"
+  },
+  "extensions": {
+    "uni-cloud-jql": {}
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
