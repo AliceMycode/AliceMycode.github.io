@@ -74,4 +74,4 @@ npm run dev:h5
 
 ##### 注意：因为发布上线需要各种资质证明所以暂无发布，浏览体验版是需要开启本地调试才可以
 
-### ![oiYwi7QxJx3nPa9SunEZxKhJaXvg](F:\admin\Download\oiYwi7QxJx3nPa9SunEZxKhJaXvg.jpg)
+### ![oiYwi7QxJx3nPa9SunEZxKhJaXvg.jpg](https://pic8.58cdn.com.cn/nowater/webim/big/n_v22ce903df828a42f29fe2f7dfe15ca874.jpg)
