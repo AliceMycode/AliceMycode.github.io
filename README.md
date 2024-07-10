@@ -73,7 +73,7 @@ MIT
 
 ##### 4、沿线运动类
 
-![8.jpg](https://pic2.58cdn.com.cn/nowater/webim/big/n_v2213f0171b6e74e8caf87c900a0a2fb5a.jpg)
+![8.jpg](https://pic2.58cdn.com.cn/nowater/webim/big/n_v28a6a9d183558432797565d8e89cd7654.jpg)
 
 ##### 5、剖面分析类
 
