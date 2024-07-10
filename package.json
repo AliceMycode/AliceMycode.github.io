@@ -1,55 +1,28 @@
 {
-  "name": "onemap",
-  "version": "0.1.0",
+  "name": "hexo-site",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "hexo generate",
+    "clean": "hexo clean",
+    "deploy": "hexo deploy",
+    "server": "hexo server"
+  },
+  "hexo": {
+    "version": "6.1.0"
   },
   "dependencies": {
-    "axios": "^1.3.5",
-    "core-js": "^3.8.3",
-    "echarts": "^5.4.2",
-    "element-ui": "^2.15.12",
-    "file-saver": "^2.0.5",
-    "gcoord": "^1.0.5",
-    "less": "^3.0.4",
-    "less-loader": "^5.0.0",
-    "moment": "^2.29.4",
-    "qs": "^6.11.1",
-    "vue": "^2.6.14",
-    "vue-json-excel": "^0.3.0",
-    "vue-router": "^3.2.0",
-    "vuex": "^4.1.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3",
-    "vue-template-compiler": "^2.6.14"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "hexo": "^6.0.0",
+    "hexo-deployer-git": "^3.0.0",
+    "hexo-generator-archive": "^1.0.0",
+    "hexo-generator-category": "^1.0.0",
+    "hexo-generator-index": "^2.0.0",
+    "hexo-generator-tag": "^1.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^5.0.0",
+    "hexo-renderer-stylus": "^2.0.0",
+    "hexo-server": "^3.0.0",
+    "hexo-theme-aurora": "^1.5.5",
+    "hexo-theme-landscape": "^0.0.3"
+  }
 }

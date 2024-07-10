@@ -1,0 +1,54 @@
+name: Deploy
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download Branch
+      uses: actions/checkout@v2
+
+    - name: Update Submodule
+      run: |
+        git submodule init
+        git submodule update --remote
+
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: "12.x"
+
+    - name: Install NodeModules
+      run: |
+        rm -f .yarnclean yarn.lock
+        yarn --non-interactive --silent
+        yarn list --depth=0
+
+    - name: Install Pandoc
+      run: sudo apt-get install -y pandoc
+
+    - name: Hexo Generate
+      run: |
+        rm -rf ./public
+        yarn run hexo clean
+        yarn run hexo generate
+
+    - name: Turnstyle
+      uses: softprops/turnstyle@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Upload to OSS
+      env:
+        OSS_AccessKeyID: ${{ secrets.OSS_AccessKeyID }}
+        OSS_AccessKeySecret: ${{ secrets.OSS_AccessKeySecret }}
+      run: |
+        wget -q https://gosspublic.alicdn.com/ossutil/1.7.3/ossutil64
+        chmod +x ./ossutil64
+        ./ossutil64 config -e oss-ap-southeast-1.aliyuncs.com -i $OSS_AccessKeyID -k $OSS_AccessKeySecret -L CH
+        ./ossutil64 cp -r -f oss://fluid-dev/docs ./public/
+        ./ossutil64 rm -r -f oss://fluid-dev/
+        ./ossutil64 cp -r -f ./public oss://fluid-dev/
