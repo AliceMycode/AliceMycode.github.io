@@ -77,10 +77,10 @@ MIT
 
 ##### 5、剖面分析类
 
-![9.jpg](https://img.picui.cn/free/2024/07/10/668e8d4235e33.jpg)
+![9.jpg](https://pic1.58cdn.com.cn/nowater/webim/big/n_v29849083364a54bb8ae89dfeb1f54fec4.jpg)
 
 ## 注意事项
 
 ##### 如果要做二次开发，需要去[天地图官网](http://lbs.tianditu.gov.cn/)注册一个账号并且创建一个应用并选择相应的API，系统会给你一个token，把下图目录对应的token换成你自己的token
 
-![10.jpg](https://img.picui.cn/free/2024/07/10/668e8da2155e9.jpg)
+![10.jpg](https://pic6.58cdn.com.cn/nowater/webim/big/n_v2282039865c7342e79b25b1133a11b077.jpg)
