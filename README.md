@@ -1,17 +1,23 @@
-## 项目简介
+# :rocket:Chatgpt
+
+[![npm version](https://img.shields.io/npm/v/gcoord.svg)](https://www.npmjs.com/package/gcoord)
+[![codecov](https://codecov.io/gh/hujiulong/gcoord/branch/master/graph/badge.svg)](https://codecov.io/gh/hujiulong/gcoord)
+[![gzip size](http://img.badgesize.io/https://unpkg.com/gcoord/dist/gcoord.global.prod.js?compression=gzip)](https://unpkg.com/gcoord/dist/gcoord.global.prod.js)
+[![LICENSE](https://img.shields.io/npm/l/gcoord.svg)](https://www.npmjs.com/package/gcoord)
+[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
 
 ##### 调用讯飞星火对话大模型实现API自己的chatgpt。
 
+更多信息可以阅读[讯飞星火官网](https://xinghuo.xfyun.cn/)
+
 ## 技术栈
 
-- ##### 前端框架：[uni-app](https://uniapp.dcloud.net.cn/) (Vue3 + TS + Setup)
-- ##### 云函数：[uniCloud-aliyun](https://doc.dcloud.net.cn/uniCloud/)
+- 前端框架：[uni-app](https://uniapp.dcloud.net.cn/) (Vue3 + TS + Setup)
+- 云函数：[uniCloud-aliyun](https://doc.dcloud.net.cn/uniCloud/)
 
-## 运行程序
+## 安装
 
-1. ##### 安装依赖
-
-```shell
+```bash
 # npm
 npm i --registry=https://registry.npmmirror.com
 
@@ -19,9 +25,9 @@ npm i --registry=https://registry.npmmirror.com
 pnpm i --registry=https://registry.npmmirror.com
 ```
 
-2. ##### 运行程序
+## 运行
 
-```shell
+```bash
 # 微信小程序端
 npm run dev:mp-weixin
 
@@ -32,7 +38,11 @@ npm run dev:h5
 需 HbuilderX 工具，运行 - 运行到手机或模拟器
 ```
 
-3. ##### 微信开发者工具导入 `/dist/dev/mp-weixin` 目录
+## 打包
+
+```bash
+微信开发者工具导入 `/dist/dev/mp-weixin` 目录
+```
 
 ## 工程结构解析
 
@@ -83,3 +93,16 @@ npm run dev:h5
 ##### 4、再次点击“前往体验版”就可以愉快的访问啦
 
 ![1.jpg](https://pic5.58cdn.com.cn/nowater/webim/big/n_v29249c0c4452b401b822b4ab99793d69c.jpg)
+
+## LICENSE
+
+MIT
+
+[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+[Object]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+[Error]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
+
+[GeoJSON]: https://tools.ietf.org/html/rfc7946#page-6
+
