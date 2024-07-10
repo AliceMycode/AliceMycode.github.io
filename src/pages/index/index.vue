@@ -288,9 +288,8 @@ const selectText = (val: string) => {
                   <text user-select>
                     {{ item.content }}
                   </text>
-                  <view class="ai-box__copy">
+                  <view class="ai-box__copy" v-show="item.isShowCopyIcon">
                     <image
-                      v-show="item.isShowCopyIcon"
                       class="ai-box__image"
                       src="/static/images/fuzhi.png"
                       mode="widthFix"
