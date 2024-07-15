@@ -60,17 +60,20 @@
           </el-input>
         </el-form-item>
         <el-form-item>
-          <el-input
-            v-model.trim="formData.checkcode"
-            size="large"
-            clearable
-            placeholder="请输入验证码"
-            @focus="clearVerify"
-          >
-            <template #prefix>
-              <span class="iconfont icon-checkcode"></span>
-            </template>
-          </el-input>
+          <div class="check-code-panel">
+            <el-input
+              v-model.trim="formData.checkcode"
+              size="large"
+              clearable
+              placeholder="请输入验证码"
+              @focus="clearVerify"
+            >
+              <template #prefix>
+                <span class="iconfont icon-checkcode"></span>
+              </template>
+            </el-input>
+            <img :src="checkCodeUrl" class="check-code" @click="changeCheckCode" />
+          </div>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" class="login-btn" @click="submit">{{
@@ -96,9 +99,24 @@ const changeOpType = () => {
   nextTick(() => {
     formDataRef.value.resetFields()
     formData.value = {}
+    changeCheckCode()
     clearVerify()
   })
 }
+
+// 获取验证码
+const checkCodeUrl = ref(null)
+const changeCheckCode = async () => {
+  let result = await proxy.Request({
+    url: proxy.Api.checkCode
+  })
+  if (!result) {
+    return
+  }
+  checkCodeUrl.value = result.data.checkCode
+  localStorage.setItem('checkCodeKey', result.data.checkCodeKey)
+}
+changeCheckCode()
 
 // 登录注册表单校验
 const submit = () => {

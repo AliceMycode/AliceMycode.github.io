@@ -15,6 +15,19 @@ export default defineConfig({
         '@': resolve('src/renderer/src')
       }
     },
-    plugins: [vue()]
+    plugins: [vue()],
+    server: {
+      hmr: true,
+      port: 5000,
+      proxy: {
+        '/api': {
+          target: 'http://easychat-api.wuhancoder.com/',
+          changeOrigin: true,
+          pathRewrite: {
+            '^api': '/api'
+          }
+        }
+      }
+    }
   }
 })
