@@ -2,19 +2,13 @@ import { app, shell, BrowserWindow } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
-const NODE_ENV = process.env.NODE_ENV
 
-const login_width = 300
-const login_height = 370
-const register_height = 490
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: login_width,
-    height: login_height,
+    width: 900,
+    height: 670,
     show: false,
-    resizable: false,
-    frame: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
@@ -31,11 +25,6 @@ function createWindow() {
     shell.openExternal(details.url)
     return { action: 'deny' }
   })
-
-  //打开控制台
-  if (NODE_ENV === 'development') {
-    mainWindow.webContents.openDevTools()
-  }
 
   // HMR for renderer base on electron-vite cli.
   // Load the remote URL for development or the local html file for production.

@@ -10,7 +10,6 @@ module.exports = {
   ],
   rules: {
     'vue/require-default-prop': 'off',
-    'vue/multi-word-component-names': 'off',
-    'no-unused-vars': 'off'
+    'vue/multi-word-component-names': 'off'
   }
 }

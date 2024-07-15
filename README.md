@@ -1,4 +1,4 @@
-# im
+# easychat-front
 
 An Electron application with Vue
 
