@@ -25,7 +25,7 @@ dependencies:
     version: 8.2.0
   element-plus:
     specifier: ^2.4.3
-    version: 2.7.7(vue@3.4.31)
+    version: 2.7.3(vue@3.4.31)
   express:
     specifier: ^4.18.2
     version: 4.19.2
@@ -46,10 +46,10 @@ dependencies:
     version: 2.1.7(vue@3.4.31)
   sass:
     specifier: ^1.69.5
-    version: 1.77.8
+    version: 1.69.5
   sass-loader:
     specifier: ^13.3.2
-    version: 13.3.3(sass@1.77.8)(webpack@5.93.0)
+    version: 13.3.3(sass@1.69.5)(webpack@5.93.0)
   sqlite3:
     specifier: 5.1.6
     version: 5.1.6
@@ -108,7 +108,7 @@ devDependencies:
     version: 3.3.3
   vite:
     specifier: ^4.4.9
-    version: 4.5.3(less@4.2.0)(sass@1.77.8)
+    version: 4.5.3(less@4.2.0)(sass@1.69.5)
   vue:
     specifier: ^3.3.4
     version: 3.4.31
@@ -1033,7 +1033,7 @@ packages:
       vite: ^4.0.0 || ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.5.3(less@4.2.0)(sass@1.77.8)
+      vite: 4.5.3(less@4.2.0)(sass@1.69.5)
       vue: 3.4.31
     dev: true
 
@@ -2340,7 +2340,7 @@ packages:
       esbuild: 0.18.20
       magic-string: 0.30.10
       picocolors: 1.0.1
-      vite: 4.5.3(less@4.2.0)(sass@1.77.8)
+      vite: 4.5.3(less@4.2.0)(sass@1.69.5)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2357,8 +2357,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /element-plus@2.7.7(vue@3.4.31):
-    resolution: {integrity: sha512-7ucUiDAxevyBE8JbXBTe9ofHhS047VmWMLoksE45zZ08XSnhnyG7WUuk3gmDbAklfVMHedb9sEV3OovPUWt+Sw==}
+  /element-plus@2.7.3(vue@3.4.31):
+    resolution: {integrity: sha512-OaqY1kQ2xzNyRFyge3fzM7jqMwux+464RBEqd+ybRV9xPiGxtgnj/sVK4iEbnKnzQIa9XK03DOIFzoToUhu1DA==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
@@ -4467,7 +4467,7 @@ packages:
       truncate-utf8-bytes: 1.0.2
     dev: true
 
-  /sass-loader@13.3.3(sass@1.77.8)(webpack@5.93.0):
+  /sass-loader@13.3.3(sass@1.69.5)(webpack@5.93.0):
     resolution: {integrity: sha512-mt5YN2F1MOZr3d/wBRcZxeFgwgkH44wVc2zohO2YF6JiOMkiXe4BYRZpSu2sO1g71mo/j16txzUhsKZlqjVGzA==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
@@ -4487,12 +4487,12 @@ packages:
         optional: true
     dependencies:
       neo-async: 2.6.2
-      sass: 1.77.8
+      sass: 1.69.5
       webpack: 5.93.0
     dev: false
 
-  /sass@1.77.8:
-    resolution: {integrity: sha512-4UHg6prsrycW20fqLGPShtEvo/WyHRVRHwOP4DzkUrObWoWI05QBSfzU71TVB7PFaL104TwNaHpjlWXAZbQiNQ==}
+  /sass@1.69.5:
+    resolution: {integrity: sha512-qg2+UCJibLr2LCVOt3OlPhr/dqVHWOa9XtZf2OjbLs/T4VPSJ00udtgJxH3neXZm+QqX8B+3cU7RaLqp1iVfcQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -5086,7 +5086,7 @@ packages:
     resolution: {integrity: sha512-TlhdSp2oEOLFXvEp4psKaeTjR5zBjTRcM/sHUN8PkV1UWuY8HKC8n7GaVdW5Xqnwdr/F1OmzLik1QwDjI4w/nw==}
     dev: false
 
-  /vite@4.5.3(less@4.2.0)(sass@1.77.8):
+  /vite@4.5.3(less@4.2.0)(sass@1.69.5):
     resolution: {integrity: sha512-kQL23kMeX92v3ph7IauVkXkikdDRsYMGTVl5KY2E9OY4ONLvkHf04MDTbnfo6NKxZiDLWzVpP5oTa8hQD8U3dg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -5118,7 +5118,7 @@ packages:
       less: 4.2.0
       postcss: 8.4.39
       rollup: 3.29.4
-      sass: 1.77.8
+      sass: 1.69.5
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
