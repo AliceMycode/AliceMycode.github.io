@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { ElLoading } from 'element-plus'
 import Message from '../utils/Message'
-// import Api from '../utils/Api'
+import Api from '../utils/Api'
 const contentTypeForm = 'application/x-www-form-urlencoded;charset=UTF-8'
 const contentTypeJson = 'application/json'
 const responseTypeJson = 'json'
@@ -9,9 +9,7 @@ let loading = null
 const instance = axios.create({
   withCredentials: true,
   // 正常写法
-  // baseURL: (import.meta.env.PROD ? Api.prodDomain : '') + '/api',
-  // 由于我本地服务没起来，所以先写死线上的ip
-  baseURL: 'http://easychat-api.wuhancoder.com/api',
+  baseURL: (import.meta.env.PROD ? Api.prodDomain : '') + '/api',
   timeout: 10 * 1000
 })
 // 请求前拦截器

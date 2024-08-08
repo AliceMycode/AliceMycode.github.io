@@ -21,7 +21,7 @@ export default defineConfig({
       port: 5000,
       proxy: {
         '/api': {
-          target: 'http://easychat-api.wuhancoder.com/',
+          target: 'http://127.0.0.1:5050/',
           changeOrigin: true,
           pathRewrite: {
             '^api': '/api'

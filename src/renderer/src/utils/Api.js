@@ -1,5 +1,5 @@
 const api = {
-  prodDomain: 'http://easychat-api.wuhancoder.com', //"http://easychat-api.wuhancoder.com",//域名
+  prodDomain: 'http://127.0.0.1:5050', //"http://easychat-api.wuhancoder.com",//域名
   devDomain: 'http://127.0.0.1:5050',
   prodWsDomain: 'ws:/easychat-ws.wuhancoder.com/ws', //"ws:/easychat-ws.wuhancoder.com/ws",
   devWsDomain: 'ws:/127.0.0.1:5051/ws',
