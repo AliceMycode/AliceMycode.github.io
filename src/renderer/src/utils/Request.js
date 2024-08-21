@@ -6,6 +6,7 @@ const contentTypeForm = 'application/x-www-form-urlencoded;charset=UTF-8'
 const contentTypeJson = 'application/json'
 const responseTypeJson = 'json'
 let loading = null
+console.log('11', import.meta.env.PROD)
 const instance = axios.create({
   withCredentials: true,
   // 正常写法
@@ -36,6 +37,7 @@ instance.interceptors.request.use(
 // 请求后拦截器
 instance.interceptors.response.use(
   (response) => {
+    console.log('response', response)
     const { showLoading, errorCallback, showError = true, responseType } = response.config
     if (showLoading && loading) {
       loading.close()
