@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import ElementPlus from 'element-plus'
+import * as Pinia from 'pinia'
 import 'element-plus/dist/index.css'
 
 import Utils from '@/utils/Utils'
@@ -17,6 +18,7 @@ import '@/assets/icon/iconfont.css'
 
 const app = createApp(App)
 app.use(ElementPlus)
+app.use(Pinia.createPinia())
 app.use(router)
 
 app.config.globalProperties.Utils = Utils

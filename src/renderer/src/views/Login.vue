@@ -62,7 +62,7 @@
         <el-form-item>
           <div class="check-code-panel">
             <el-input
-              v-model.trim="formData.checkcode"
+              v-model.trim="formData.checkCode"
               size="large"
               clearable
               placeholder="请输入验证码"
@@ -89,6 +89,11 @@
 </template>
 <script setup>
 import { ref, getCurrentInstance, nextTick } from 'vue'
+import { useRouter } from 'vue-router'
+import md5 from 'js-md5'
+import { useUserInfoStore } from '@/stores/UserInfoStore'
+const router = useRouter()
+const userInfoStore = useUserInfoStore()
 const { proxy } = getCurrentInstance()
 const formData = ref({})
 const formDataRef = ref()
@@ -119,7 +124,8 @@ const changeCheckCode = async () => {
 changeCheckCode()
 
 // 登录注册表单校验
-const submit = () => {
+const showLoading = ref(false)
+const submit = async () => {
   clearVerify()
   if (!checkValue('checkEmail', formData.value.email, '请输入正确的邮箱')) {
     return false
@@ -136,8 +142,40 @@ const submit = () => {
     errorMsg.value = '两次输入的密码不一致'
     return false
   }
-  if (!checkValue(null, formData.value.checkcode, '请输入验证码')) {
+  if (!checkValue(null, formData.value.checkCode, '请输入验证码')) {
     return false
+  }
+
+  if (isLogin.value) {
+    showLoading.value = true
+  }
+  let result = await proxy.Request({
+    url: isLogin.value ? proxy.Api.login : proxy.Api.register,
+    showLoading: isLogin.value ? false : true,
+    showError: false,
+    params: {
+      email: formData.value.email,
+      password: isLogin.value ? md5(formData.value.password) : formData.value.password,
+      checkCode: formData.value.checkCode,
+      nickName: formData.value.nickName,
+      checkCodeKey: localStorage.getItem('checkCodeKey')
+    },
+    errorCallback: (response) => {
+      showLoading.value = false
+      changeCheckCode()
+      errorMsg.value = response.info
+    }
+  })
+  if (!result) {
+    return
+  }
+  if (isLogin.value) {
+    userInfoStore.setInfo(result.data)
+    localStorage.setItem('token', result.data.token)
+    router.push('/main')
+  } else {
+    proxy.Message.success('注册成功')
+    changeOpType()
   }
 }
 
