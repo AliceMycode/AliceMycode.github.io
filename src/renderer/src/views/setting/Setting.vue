@@ -1,9 +1,9 @@
 <template>
   <Layout>
     <template #left-content>
-      <span>聊天主页面</span>
-    </template></Layout
-  >
+      <span>设置主页面</span>
+    </template>
+  </Layout>
 </template>
 <script setup></script>
 <style lang="scss" scoped></style>

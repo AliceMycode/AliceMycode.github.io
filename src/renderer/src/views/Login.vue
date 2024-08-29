@@ -1,7 +1,10 @@
 <template>
   <div class="login-panel">
     <div class="title drag">EasyChat</div>
-    <div class="login-form">
+    <div v-if="showLoading" class="loading-panel">
+      <img src="../assets/img/loading.gif" />
+    </div>
+    <div v-else class="login-form">
       <div class="error-msg">{{ errorMsg }}</div>
       <el-form ref="formDataRef" :model="formData" label-width="0px" @submit.prevent>
         <el-form-item>
@@ -173,6 +176,17 @@ const submit = async () => {
     userInfoStore.setInfo(result.data)
     localStorage.setItem('token', result.data.token)
     router.push('/main')
+    const screenWidth = window.screen.width
+    const screenHeight = window.screen.height
+    window.ipcRenderer.send('openChat', {
+      email: formData.value.email,
+      token: result.data.token,
+      userId: result.data.userId,
+      nickName: result.data.nickName,
+      admin: result.data.admin,
+      screenHeight: screenHeight,
+      screenWidth: screenWidth
+    })
   } else {
     proxy.Message.success('注册成功')
     changeOpType()
