@@ -3,6 +3,7 @@ import ElementPlus from 'element-plus'
 import * as Pinia from 'pinia'
 import 'element-plus/dist/index.css'
 
+import WinOp from '@/components/WinOp.vue'
 import Layout from '@/components/Layout.vue'
 
 import Utils from '@/utils/Utils'
@@ -29,6 +30,7 @@ app.config.globalProperties.Request = Request
 app.config.globalProperties.Message = Message
 app.config.globalProperties.Api = Api
 
+app.component('WinOp', WinOp)
 app.component('Layout', Layout)
 
 app.mount('#app')

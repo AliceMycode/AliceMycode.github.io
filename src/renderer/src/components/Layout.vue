@@ -7,6 +7,7 @@
       <slot name="right-content"> </slot>
     </div>
   </div>
+  <WinOp></WinOp>
 </template>
 
 <style lang="scss" scoped>

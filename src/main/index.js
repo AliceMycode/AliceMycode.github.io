@@ -1,8 +1,8 @@
-import { app, shell, BrowserWindow, ipcMain } from 'electron'
+import { app, shell, BrowserWindow, ipcMain, Menu, Tray } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
-import { onLoginOrRegister, onLoginSuccess } from './ipc'
+import { onLoginOrRegister, onLoginSuccess, winTitleOp } from './ipc'
 const NODE_ENV = process.env.NODE_ENV
 const login_width = 300
 const login_height = 370
@@ -15,6 +15,7 @@ function createWindow() {
     resizable: false,
     frame: false,
     autoHideMenuBar: true,
+    transparent: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
@@ -55,6 +56,24 @@ function createWindow() {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
 
+  // 托盘
+  const tray = new Tray(icon)
+  const contextMenu = [
+    {
+      label: '退出EasyChat',
+      click: () => {
+        app.exit()
+      }
+    }
+  ]
+  const menu = Menu.buildFromTemplate(contextMenu)
+  tray.setToolTip('EasyChat')
+  tray.setContextMenu(menu)
+  tray.on('click', () => {
+    mainWindow.setSkipTaskbar(false)
+    mainWindow.show()
+  })
+  // 监听登录/注册
   onLoginOrRegister((isLogin) => {
     mainWindow.setResizable(true)
     if (isLogin) {
@@ -76,6 +95,42 @@ function createWindow() {
     mainWindow.setMinimumSize(800, 600)
     if (config.admin) {
       console.log(111)
+    }
+    contextMenu.unshift({
+      label: '用户' + config.nickName,
+      click: () => {}
+    })
+    tray.setContextMenu(Menu.buildFromTemplate(contextMenu))
+  })
+  winTitleOp((e, { action, data }) => {
+    const webContents = e.sender
+    const win = BrowserWindow.fromWebContents(webContents)
+    switch (action) {
+      case 'close': {
+        if (data.closeType === 0) {
+          win.close()
+        } else {
+          win.setSkipTaskbar(true)
+          win.hide()
+        }
+        break
+      }
+      case 'minimize': {
+        win.minimize()
+        break
+      }
+      case 'unmaximize': {
+        win.unmaximize()
+        break
+      }
+      case 'maximize': {
+        win.maximize()
+        break
+      }
+      case 'top': {
+        win.setAlwaysOnTop(data.top)
+        break
+      }
     }
   })
 }

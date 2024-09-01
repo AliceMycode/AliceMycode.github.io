@@ -14,4 +14,10 @@ const onLoginSuccess = (callback) => {
   })
 }
 
-export { onLoginOrRegister, onLoginSuccess }
+const winTitleOp = (callback) => {
+  ipcMain.on('winTitleOp', (e, data) => {
+    callback(e, data)
+  })
+}
+
+export { onLoginOrRegister, onLoginSuccess, winTitleOp }

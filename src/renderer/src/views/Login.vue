@@ -89,6 +89,7 @@
       </el-form>
     </div>
   </div>
+  <WinOp :showSetTop="false" :showMin="false" :showMax="false" :closeType="0"></WinOp>
 </template>
 <script setup>
 import { ref, getCurrentInstance, nextTick } from 'vue'
@@ -224,7 +225,7 @@ const clearVerify = () => {
   }
 }
 .login-panel {
-  background: ■#fff;
+  background-color: #fff;
   border-radius: 3px;
   border: 1px solid #ddd;
   .title {
