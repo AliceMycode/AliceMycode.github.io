@@ -28,7 +28,20 @@ const router = createRouter({
         {
           path: '/contact',
           name: 'contact',
-          component: () => import('@/views/contact/Contact.vue')
+          redirect: '/contact/blank',
+          component: () => import('@/views/contact/Contact.vue'),
+          children: [
+            {
+              path: 'blank',
+              bane: 'blank',
+              component: () => import('@/views/contact/BlankPage.vue')
+            },
+            {
+              path: 'search',
+              bane: 'search',
+              component: () => import('@/views/contact/search.vue')
+            }
+          ]
         },
         {
           path: '/setting',

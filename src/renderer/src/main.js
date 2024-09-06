@@ -4,6 +4,9 @@ import * as Pinia from 'pinia'
 import 'element-plus/dist/index.css'
 
 import WinOp from '@/components/WinOp.vue'
+import ShowLocalImage from '@/components/ShowLocalImage.vue'
+import UserBaseInfo from '@/components/UserBaseInfo.vue'
+import ContentPanel from '@/components/ContentPanel.vue'
 import Layout from '@/components/Layout.vue'
 
 import Utils from '@/utils/Utils'
@@ -31,6 +34,9 @@ app.config.globalProperties.Message = Message
 app.config.globalProperties.Api = Api
 
 app.component('WinOp', WinOp)
+app.component('ShowLocalImage', ShowLocalImage)
 app.component('Layout', Layout)
+app.component('ContentPanel', ContentPanel)
+app.component('UserBaseInfo', UserBaseInfo)
 
 app.mount('#app')
